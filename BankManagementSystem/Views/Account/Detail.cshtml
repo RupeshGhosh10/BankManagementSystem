@@ -1,0 +1,58 @@
+﻿@model BankManagementSystem.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Detail</h3>
+<hr />
+<div class="container">
+    <dl>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.FullName)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.FullName)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.PhoneNumber)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.PhoneNumber)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.Email)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.Email)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.Gender)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.Gender)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.Address)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.Address)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.State)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.State)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.PhoneNumber)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.PhoneNumber)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.MartialStatus)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.MartialStatus)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.DateOfBirth)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.DateOfBirth)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.RegistrationDate)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.RegistrationDate)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccountType)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.BankAccountType)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.Deposit)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.Deposit)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.IdentificationProofType)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.IdentificationProofType)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.IdentificationDocumentNumber)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.IdentificationDocumentNumber)</dd>
+        </div>
+    </dl>
+    <div class="mt-5">
+        <a class="btn btn-primary" asp-action="Edit">Edit</a>
+    </div>
+</div>

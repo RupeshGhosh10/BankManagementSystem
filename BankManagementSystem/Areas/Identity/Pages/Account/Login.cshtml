@@ -1,0 +1,45 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card mb-3 border-secondary">
+            <div class="card-header text-center h3">Log In</div>
+            <div class="card-body">
+                <form id="account" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email" class="control-label"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password" class="control-label"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input asp-for="Input.RememberMe" class="custom-control-input" checked="" />
+                            <label asp-for="Input.RememberMe" class="custom-control-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <input type="submit" value="Log In" class="btn btn-primary" />
+                    </div>
+                    <p>
+                        <a asp-action="Register" asp-controller="Account">Register as a new user?</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
