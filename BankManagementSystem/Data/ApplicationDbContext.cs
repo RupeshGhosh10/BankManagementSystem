@@ -15,5 +15,7 @@ namespace BankManagementSystem.Data
         }
 
         public DbSet<BankAccount> BankAccounts { get; set; }
+        public DbSet<EducationLoan> EducationLoans { get; set; }
+        public DbSet<PersonalLoan> PersonalLoans { get; set; }
     }
 }
