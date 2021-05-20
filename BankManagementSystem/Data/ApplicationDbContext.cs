@@ -13,5 +13,7 @@ namespace BankManagementSystem.Data
             : base(options)
         {
         }
+
+        public DbSet<BankAccount> BankAccounts { get; set; }
     }
 }

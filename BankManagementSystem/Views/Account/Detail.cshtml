@@ -3,12 +3,19 @@
 @{
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var accountIdFormat = String.Format("R-{0:000}", Model.BankAccountId);
 }
 
 <h3>Detail</h3>
 <hr />
 <div class="container">
     <dl>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccountId)</dt>
+            <dd class="col-md-4">@accountIdFormat</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.CitizenStatus)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.CitizenStatus)</dd>
+        </div>
         <div class="row mb-2">
             <dt class="col-md-2">@Html.DisplayNameFor(m => m.FullName)</dt>
             <dd class="col-md-4">@Html.DisplayFor(m => m.FullName)</dd>
@@ -40,19 +47,25 @@
             <dd class="col-md-2">@Html.DisplayFor(m => m.RegistrationDate)</dd>
         </div>
         <div class="row mb-2">
-            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccountType)</dt>
-            <dd class="col-md-4">@Html.DisplayFor(m => m.BankAccountType)</dd>
-            <dt class="col-md-2">@Html.DisplayNameFor(m => m.Deposit)</dt>
-            <dd class="col-md-2">@Html.DisplayFor(m => m.Deposit)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccount.BankAccountType)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.BankAccount.BankAccountType)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccount.Deposit)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.BankAccount.Deposit)</dd>
         </div>
         <div class="row mb-2">
-            <dt class="col-md-2">@Html.DisplayNameFor(m => m.IdentificationProofType)</dt>
-            <dd class="col-md-4">@Html.DisplayFor(m => m.IdentificationProofType)</dd>
-            <dt class="col-md-2">@Html.DisplayNameFor(m => m.IdentificationDocumentNumber)</dt>
-            <dd class="col-md-2">@Html.DisplayFor(m => m.IdentificationDocumentNumber)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccount.IdentificationProofType)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.BankAccount.IdentificationProofType)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccount.IdentificationDocumentNumber)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.BankAccount.IdentificationDocumentNumber)</dd>
+        </div>
+        <div class="row mb-2">
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccount.NomineeName)</dt>
+            <dd class="col-md-4">@Html.DisplayFor(m => m.BankAccount.NomineeName)</dd>
+            <dt class="col-md-2">@Html.DisplayNameFor(m => m.BankAccount.NomineeAccountNumber)</dt>
+            <dd class="col-md-2">@Html.DisplayFor(m => m.BankAccount.NomineeAccountNumber)</dd>
         </div>
     </dl>
-    <div class="mt-5">
+    <div class="mt-3">
         <a class="btn btn-primary" asp-action="Edit">Edit</a>
     </div>
 </div>

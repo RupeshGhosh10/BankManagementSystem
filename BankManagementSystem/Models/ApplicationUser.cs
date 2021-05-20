@@ -44,20 +44,13 @@ namespace BankManagementSystem.Models
         public DateTime RegistrationDate { get; set; }
 
         [Required]
-        [Display(Name = "Account Type")]
-        public BankAccountType BankAccountType { get; set; }
+        [Display(Name = "Citizen Type")]
+        public CitizenStatus CitizenStatus { get; set; }
 
-        [Required]
-        [DataType(DataType.Currency)]
-        public double Deposit { get; set; }
+        [ForeignKey("BankAccount")]
+        [Display(Name = "Account Number")]
+        public int? BankAccountId { get; set; }
 
-        [Required]
-        [Display(Name = "Identification Proof Type")]
-        public IdentificationProofType IdentificationProofType { get; set; }
-
-        [Required]
-        [MaxLength(50)]
-        [Display(Name = "Identification Document Number")]
-        public string IdentificationDocumentNumber { get; set; }
+        public BankAccount BankAccount { get; set; }
     }
 }

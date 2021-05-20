@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BankManagementSystem.Models.ViewModel
 {
-    public class RegisterViewModel
+    public class EditViewModel
     {
         [Required]
         [MaxLength(100)]
@@ -20,11 +20,6 @@ namespace BankManagementSystem.Models.ViewModel
         [RegularExpression(@"^[6789]\d{9}$", ErrorMessage = "Please enter valid phone number")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
-
-        [Required]
-        [EmailAddress]
-        [MaxLength(100)]
-        public string Email { get; set; }
 
         [Required]
         [MaxLength(250)]
@@ -73,19 +68,8 @@ namespace BankManagementSystem.Models.ViewModel
         [Display(Name = "Nominee Name")]
         public string NomineeName { get; set; }
 
-        [RegularExpression(@"^R-\d{3}$", ErrorMessage = "Enter valid account number in format R-XXX")]
+        [RegularExpression(@"^R-\d{3}$", ErrorMessage = "Enter valid account number in form R-XXX")]
         [Display(Name = "Nominee Account Number")]
         public string NomineeAccountNumber { get; set; }
-
-        [Required]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{6,}$", ErrorMessage = "Password must contain six characters and at least an uppercase character, a lowercase character, a digit and a special character")]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-        [Required]
-        [Display(Name = "Confirm Password")]
-        [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Your password and confirm password do not match")]
-        public string ConfirmPassword { get; set; }
     }
 }
