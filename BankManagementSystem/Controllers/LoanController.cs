@@ -55,33 +55,5 @@ namespace BankManagementSystem.Controllers
 
             return View(loan);
         }
-
-        public IActionResult EducationLoan()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EducationLoan([FromForm] EducationLoan loan)
-        {
-            var user = await _userManager.GetUserAsync(User);
-
-            loan.ApplicationUserId = user.Id;
-            loan.AppliedDate = DateTime.Today;
-
-            if (user.CitizenStatus == CitizenStatus.Normal) loan.RateOfInterest = 2;
-            else loan.RateOfInterest = 4;
-
-            if (ModelState.IsValid)
-            {
-                await _context.EducationLoans.AddAsync(loan);
-                await _context.SaveChangesAsync();
-
-                return RedirectToAction("Index");
-            }
-
-            return View(loan);
-        }
     }
 }
