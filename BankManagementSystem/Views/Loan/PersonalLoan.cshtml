@@ -1,0 +1,87 @@
+﻿@model BankManagementSystem.Models.PersonalLoan
+@using BankManagementSystem.Models.Enum
+
+@{
+    ViewData["Title"] = "Personal Loan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Personal Loan</h3>
+<hr />
+<div class="container">
+    <form asp-action="PersonalLoan" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="LoanAmount" class="control-label"></label>
+                    <input asp-for="LoanAmount" class="form-control" type="number" />
+                    <span asp-validation-for="LoanAmount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="LoanDuration" class="control-label"></label>
+                    <select asp-for="LoanDuration" asp-items="Html.GetEnumSelectList<LoanDuration>()" class="custom-select"></select>
+                    <span asp-validation-for="LoanDuration" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="AnnualIncome" class="control-label"></label>
+                    <input asp-for="AnnualIncome" class="form-control" type="number" />
+                    <span asp-validation-for="AnnualIncome" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CompanyName" class="control-label"></label>
+                    <input asp-for="CompanyName" class="form-control" />
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Designation" class="control-label"></label>
+                    <input asp-for="Designation" class="form-control" />
+                    <span asp-validation-for="Designation" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="TotalExperience" class="control-label"></label>
+                    <input asp-for="TotalExperience" class="form-control" type="number" />
+                    <span asp-validation-for="TotalExperience" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="TotalExperienceWithCurrentCompany" class="control-label"></label>
+                    <input asp-for="TotalExperienceWithCurrentCompany" class="form-control col-md-8" type="number" />
+                    <span asp-validation-for="TotalExperienceWithCurrentCompany" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="submit" value="Take Loan" class="btn btn-primary" />
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <input type="reset" value="Reset" class="btn btn-danger" />
+                </div>
+            </div>
+        </div>
+        @Html.AntiForgeryToken()
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

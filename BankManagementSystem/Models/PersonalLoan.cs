@@ -54,7 +54,7 @@ namespace BankManagementSystem.Models
 
         [Required]
         [Range(0, 50, ErrorMessage = "Experince must be grater than zero")]
-        [Display(Name = "Total Experience in Current Company")]
+        [Display(Name = "Experience in Current Company")]
         public int TotalExperienceWithCurrentCompany { get; set; }
 
         [ForeignKey("ApplicationUser")]

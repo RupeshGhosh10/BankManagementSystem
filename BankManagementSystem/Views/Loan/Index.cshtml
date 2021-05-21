@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-5 mt-4">Click below button to take a Loan</h1>
+    <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+        <div>
+            <a class="btn btn-primary btn-lg pl-4 pr-4" asp-action="PersonalLoan">Personal Loan</a>
+        </div>
+        <div class="mt-4">
+            <a class="btn btn-primary btn-lg" asp-action="EducationLoan">Education Loan</a>
+        </div>
+    </div>
+</div>
