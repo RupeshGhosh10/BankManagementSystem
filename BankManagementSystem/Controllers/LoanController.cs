@@ -1,11 +1,9 @@
 ﻿using BankManagementSystem.Data;
 using BankManagementSystem.Models;
 using BankManagementSystem.Models.Enum;
-using BankManagementSystem.Models.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,16 +23,9 @@ namespace BankManagementSystem.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var user = await _userManager.GetUserAsync(User);
-            var loanViewModel = new LoanViewModel
-            {
-                PersonalLoans = await _context.PersonalLoans.Where(m => m.ApplicationUserId == user.Id).ToListAsync(),
-                EducationLoans = await _context.EducationLoans.Where(m => m.ApplicationUserId == user.Id).ToListAsync()
-            };
-
-            return View(loanViewModel);
+            return View();
         }
 
         public IActionResult PersonalLoan()
