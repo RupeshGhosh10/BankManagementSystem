@@ -1,4 +1,5 @@
-﻿
+﻿@model BankManagementSystem.Models.ViewModel.LoanViewModel
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,6 +13,66 @@
         </div>
         <div class="mt-4">
             <a class="btn btn-primary btn-lg" asp-action="EducationLoan">Education Loan</a>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="h4">Personal Loan</div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Amount</th>
+                        <th>Rate of Interest</th>
+                        <th>Duration</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.PersonalLoans != null)
+                    {
+                        @foreach (var loan in Model.PersonalLoans)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(m => loan.Id)</td>
+                                <td>@Html.DisplayFor(m => loan.LoanAmount)</td>
+                                <td>@Html.DisplayFor(m => loan.RateOfInterest) %</td>
+                                <td>@Html.DisplayFor(m => loan.LoanDuration)</td>
+                                <td>Detail</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <div class="h4">Education Loan</div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Amount</th>
+                        <th>Rate of Interest</th>
+                        <th>Duration</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.EducationLoans != null)
+                    {
+                        @foreach (var loan in Model.EducationLoans)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(m => loan.Id)</td>
+                                <td>@Html.DisplayFor(m => loan.LoanAmount)</td>
+                                <td>@Html.DisplayFor(m => loan.RateOfInterest) %</td>
+                                <td>@Html.DisplayFor(m => loan.LoanDuration)</td>
+                                <td>Detail</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
